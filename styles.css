@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #e8edf5;
+  background: #101827;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(45, 91, 139, .28), transparent 55%),
+    #101827;
+}
+
+button { font: inherit; }
+
+.page-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 22px;
+}
+
+.topbar, .brand, .map-footer, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar { margin-bottom: 34px; }
+
+.brand {
+  justify-content: flex-start;
+  gap: 11px;
+  color: #f4f7fb;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #34465e;
+  border-radius: 11px;
+  color: #70b8f5;
+  background: #1b2b40;
+  font-size: 18px;
+}
+
+.tag, .eyebrow, .card-label {
+  color: #8da1ba;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.tag {
+  padding: 8px 11px;
+  border: 1px solid #2b3a4f;
+  border-radius: 20px;
+}
+
+.game-panel {
+  padding: clamp(20px, 4vw, 42px);
+  border: 1px solid #29384c;
+  border-radius: 22px;
+  background: rgba(22, 34, 51, .94);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .22);
+}
+
+.intro { margin-bottom: 25px; }
+.eyebrow { margin: 0 0 10px; color: #70b8f5; }
+
+h1, h2, p { margin-top: 0; }
+
+h1 {
+  margin-bottom: 9px;
+  color: #f4f7fb;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(25px, 4vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+
+.subheading {
+  margin-bottom: 0;
+  color: #9eafc3;
+  font-size: 14px;
+}
+
+.airport-card, .result-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 19px;
+  border: 1px solid #31445d;
+  border-radius: 14px;
+  background: #1b2b40;
+}
+
+.airport-card { margin-bottom: 16px; }
+
+.airport-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #263e59;
+  color: #78c0fa;
+  font-size: 25px;
+}
+
+.card-label { margin: 0 0 5px; font-size: 9px; }
+.airport-card h2 {
+  margin: 0;
+  color: #f0f4fa;
+  font-family: Manrope, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.result-card {
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-color: #315c62;
+  background: #18353b;
+}
+
+.distance {
+  margin: 0;
+  color: #83e0c2;
+  font-family: Manrope, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+.distance span { font-size: 14px; font-weight: 600; }
+.result-note { margin: 0; color: #a8c8c0; font-size: 12px; }
+
+.map {
+  width: 100%;
+  height: min(56vh, 520px);
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid #34465c;
+  border-radius: 15px;
+  background: #dce5eb;
+  z-index: 1;
+}
+
+.leaflet-container { font-family: "DM Sans", sans-serif; }
+
+.map-footer { gap: 16px; padding-top: 18px; }
+.map-hint { display: flex; align-items: center; gap: 9px; color: #9eafc3; font-size: 12px; }
+.hint-dot { width: 7px; height: 7px; border-radius: 50%; background: #70b8f5; }
+
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 10px;
+  background: #6db7f2;
+  color: #102033;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+.next-button:hover { background: #8ac9fb; transform: translateY(-1px); }
+.next-button:focus-visible { outline: 3px solid #d5edff; outline-offset: 3px; }
+
+.footer { padding: 20px 3px 0; color: #71839a; font-size: 11px; }
+
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 22px, 1120px); padding-top: 17px; }
+  .topbar { margin-bottom: 20px; }
+  .tag { font-size: 8px; }
+  .game-panel { padding: 19px 14px; border-radius: 16px; }
+  .map { height: 52vh; min-height: 300px; }
+  .map-footer { align-items: flex-start; flex-direction: column; }
+  .next-button { width: 100%; justify-content: center; }
+  .result-card { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .footer { align-items: flex-start; flex-direction: column; gap: 7px; }
+}
